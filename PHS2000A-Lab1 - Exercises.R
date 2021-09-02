@@ -1,12 +1,13 @@
 library(ggplot2)
 library(tidyverse)
 
+
 ##########################
 #~~ Coding Exercise #1 ~~#
 
 
 # Import the population data
-ice_cream <- read.csv("<directory>/ice_cream.csv") # update this line with the directory where you saved the CSV file
+ice_cream <- read.csv("C:/Users/denaj/Dropbox/PhD Course for PHS/Labs/PHS2000A_2021/Lab 1 - Sampling/ice_cream.csv") # update this line with the directory where you saved the CSV file
 pop_size <- nrow(ice_cream)
 
 
@@ -19,9 +20,7 @@ samp
 
 # What is the sample mean? What's the sample variance? 
 
-
-
-
+>>>>>
 
 ##########################
 #~~ Coding Exercise #2 ~~#
@@ -57,10 +56,21 @@ ggplot(data.frame(sample.means)) +
   )
 
 mean(sample.means)
-mean(sample.vars)
+var(sample.means)
 
-# Alter to code above to produce and describe the sampling distribution from 1000 samples of size 100
+# actual variance of sampling distribution of sample mean
+var(sample.means)
+# population variance of random variable
+var_scoops <- var(ice_cream$scoops) * (pop_size - 1) / pop_size
+# sampling variance
+var_scoops
+(var_scoops / n)
 
+# why is the actual variance of sampling distribution of sample mean different from the sampling variance?
+
+# Alter code above to produce and describe the sampling distribution from 1000 samples of size 100
+
+>>>>>
 
 
 ##########################
@@ -114,3 +124,5 @@ samp_epi_mean_strat.w <- mean(samp_epi_strat$scoops)*(5610/16000)
 samp_sbs_mean_strat.w <- mean(samp_sbs_strat$scoops)*(3178/16000)
 
 # add to find overall mean
+
+>>>>>
